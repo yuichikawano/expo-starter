@@ -1,12 +1,14 @@
 import { StatusBar } from "expo-status-bar";
-import { Text, View } from "react-native";
+import { View } from "react-native";
+import { AppText } from "@/components/AppText";
 
 export default function App() {
   return (
-    <View className="items-center justify-center flex-1">
-      <Text className="text-lg">
-        Open up App.tsx to start working on your app!
-      </Text>
+    <View className="items-center justify-center flex-1 p-4">
+      <AppText center>
+        Open up <AppText bold>app/index.tsx</AppText> to start working on your
+        app!
+      </AppText>
       <StatusBar style="auto" />
     </View>
   );
