@@ -1,4 +1,4 @@
-import { Pressable, Text } from "react-native";
+import { Pressable, PressableProps, Text } from "react-native";
 import { cn } from "../utils/cn";
 import React from "react";
 
@@ -7,12 +7,12 @@ type ButtonProps = {
   onPress?: () => void;
   theme?: "primary" | "secondary" | "tertiary";
   disabled?: boolean;
-};
+} & PressableProps;
 
 export const Button = React.forwardRef<
   React.ComponentRef<typeof Pressable>,
   ButtonProps
->(({ title, onPress, theme = "primary", disabled }, ref) => {
+>(({ title, onPress, theme = "primary", disabled, ...rest }, ref) => {
   return (
     <Pressable
       ref={ref}
@@ -25,6 +25,7 @@ export const Button = React.forwardRef<
         disabled && "opacity-50",
       )}
       disabled={disabled}
+      {...rest}
     >
       <Text
         className={cn(
