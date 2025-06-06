@@ -9,6 +9,7 @@ type ButtonProps = {
   disabled?: boolean;
 } & PressableProps;
 
+// from SDK 53 (React 19) onwards, forwardRef is no longer needed, as ref is now a prop
 export function Button({
   title,
   onPress,
