@@ -17,8 +17,9 @@ And one utility:
 ## Start a new project with this template
 
 ```sh
-git clone git@github.com:kadikraman/expo-starter.git my-app
-cd my-app
-cd my-app && rm -rf .git && git init && git add . && git commit -m "Initial commit"
-bun install # or remove the bun.lock file and use a different package manager
+# with bun
+bun create expo-app my-app --template https://github.com/kadikraman/expo-starter
+
+# with npm
+npx create-expo-app my-app --template https://github.com/kadikraman/expo-starter
 ```
