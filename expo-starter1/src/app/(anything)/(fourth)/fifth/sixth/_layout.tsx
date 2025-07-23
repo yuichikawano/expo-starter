@@ -7,16 +7,15 @@ import { View } from "react-native";
  * @constructor
  */
 export default function Layout() {
-  // return <Slot />;
-
+  return <Slot />;
   /**
    * LayoutコンポーネントでSlotコンポーネントがないと中の画面が見れなくなる。
    */
-  return (
-    <View>
-      <AppText center size="heading" bold>
-        Nothing to see here!
-      </AppText>
-    </View>
-  );
+  // return (
+  //   <View>
+  //     <AppText center size="heading" bold>
+  //       Nothing to see here!
+  //     </AppText>
+  //   </View>
+  // );
 }
