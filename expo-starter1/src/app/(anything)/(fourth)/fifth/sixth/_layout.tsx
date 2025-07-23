@@ -1,4 +1,4 @@
-import { Slot } from "expo-router";
+import { Redirect, Slot } from "expo-router";
 import { AppText } from "@/components/AppText";
 import { View } from "react-native";
 
@@ -7,7 +7,7 @@ import { View } from "react-native";
  * @constructor
  */
 export default function Layout() {
-  return <Slot />;
+  // return <Slot />;
   /**
    * LayoutコンポーネントでSlotコンポーネントがないと中の画面が見れなくなる。
    */
@@ -18,4 +18,6 @@ export default function Layout() {
   //     </AppText>
   //   </View>
   // );
+
+  return <Redirect href={"/second"} />;
 }
