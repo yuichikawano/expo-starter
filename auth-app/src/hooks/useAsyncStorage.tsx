@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { SplashScreen } from "expo-router";
 
 interface AsyncStorageState {
   isLoggedIn: boolean;
 }
 const AUTH_STORAGE_KEY = "auth-key";
+SplashScreen.preventAutoHideAsync();
 
 export function useAsyncStorageState() {
   const [asyncStorageState, setAsyncStorageState] =
@@ -15,6 +17,7 @@ export function useAsyncStorageState() {
     let isSubscribed = true;
     (async () => {
       try {
+        await new Promise((resolve) => setTimeout(resolve, 100));
         const jsonValue = await AsyncStorage.getItem(AUTH_STORAGE_KEY);
         if (!isSubscribed) return;
 
@@ -36,6 +39,12 @@ export function useAsyncStorageState() {
       isSubscribed = false;
     };
   }, []);
+
+  useEffect(() => {
+    if (isReady) {
+      SplashScreen.hideAsync();
+    }
+  }, [isReady]);
 
   const setAsyncStorageStateHandler = async (newState: AsyncStorageState) => {
     try {

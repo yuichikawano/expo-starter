@@ -12,8 +12,10 @@ export const AuthContextAction = React.createContext({
 });
 export const useAuthProvider = () => {
   const router = useRouter();
+
   const { asyncStorageState, setAsyncStorageState, isReady } =
     useAsyncStorageState();
+
   const login = async () => {
     await setAsyncStorageState({ isLoggedIn: true });
     /**
@@ -22,6 +24,7 @@ export const useAuthProvider = () => {
      */
     router.replace("/");
   };
+
   const logout = async () => {
     await setAsyncStorageState({ isLoggedIn: false });
     /**
