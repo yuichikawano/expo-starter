@@ -1,7 +1,7 @@
 import { View } from "react-native";
 import { AppText } from "@/components/AppText";
 import { useSearchParams } from "expo-router/build/hooks";
-import { useLocalSearchParams } from "expo-router";
+import { Stack, useLocalSearchParams } from "expo-router";
 
 export default function ProverbScreen() {
   const proverbs = [
@@ -71,6 +71,7 @@ export default function ProverbScreen() {
   }
   return (
     <View className="justify-center flex-1 p-4">
+      <Stack.Screen options={{ title: proverb.source }} />
       <AppText center>
         <AppText center size="heading" bold>
           "{proverb.proverb}"
