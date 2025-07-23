@@ -1,25 +1,16 @@
-# Expo starter
+# Expo Router Layoutの概要
 
-A plain project with the usual suspects set up:
 
-- Expo Router
-- Nativewind
-- ESLint & Prettier
-- TypeScript
+#### install
+```zsh
+npm i
+```
 
-It also contains two components:
-- `src/components/AppText.tsx` for text
-- `src/components/Button.tsx` for 3 button variants
-
-And one utility:
-- `src/utils/cn.ts` for merging Tailwind classes
-
-## Start a new project with this template
-
-```sh
-# with bun
-bun create expo-app my-app --template https://github.com/kadikraman/expo-starter
-
-# with npm
-npx create-expo-app my-app --template https://github.com/kadikraman/expo-starter
+#### 起動方法
+```zsh
+npm run start
+```
+#### sitemapの表示
+```zsh
+ npx expo-router-sitemap
 ```

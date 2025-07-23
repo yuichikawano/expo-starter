@@ -40,6 +40,13 @@ export default function IndexScreen() {
       <Link href={"/third"} push className="bg-amber-100">
         push to third
       </Link>
+
+      <Link href={"/third"} asChild push>
+        <Button title="push to third Link asChild push button" />
+      </Link>
+      <Link href={"/fifth/sixth/"} asChild push>
+        <Button title="push to Deeply Nested Link asChild push button" />
+      </Link>
     </View>
   );
 }
