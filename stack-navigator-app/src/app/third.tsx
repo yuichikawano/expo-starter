@@ -10,6 +10,10 @@ export default function ThirdScreen() {
       <Link href={"/"} push asChild>
         <Button title="push to index" />
       </Link>
+
+      <Link href={"/"} dismissTo asChild>
+        <Button title="Dismiss to index" />
+      </Link>
     </View>
   );
 }

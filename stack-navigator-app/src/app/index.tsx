@@ -7,6 +7,16 @@ import { Button } from "@/components/Button";
  * Push
  * index -> second -> third -> index -> second ...
  */
+
+/**
+ * Dismiss
+ * index -> second -> third -> dismissTo(index)
+ * indexだけの履歴のない遷移となる
+ *
+ * index -> second -> third -> index -> second -> third -> dismissTo(index)
+ * この場合、以下に戻ることになる。
+ * index -> second -> third -> index
+ */
 export default function IndexScreen() {
   return (
     <View className="justify-center flex-1 p-4">
