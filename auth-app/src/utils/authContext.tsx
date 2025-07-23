@@ -1,33 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "expo-router";
+import { useAsyncStorageState } from "@/hooks/useAsyncStorage";
 
 export const AuthContextState = React.createContext({
   isLoggedIn: false,
+  isReady: false,
 });
 export const AuthContextAction = React.createContext({
   login: () => {},
   logout: () => {},
 });
 export const useAuthProvider = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const router = useRouter();
-  const login = () => {
-    setIsLoggedIn(true);
+  const { asyncStorageState, setAsyncStorageState, isReady } =
+    useAsyncStorageState();
+  const login = async () => {
+    await setAsyncStorageState({ isLoggedIn: true });
     /**
      * (Tips)
      * ここはログイン画面に戻させないようにreplaceする
      */
     router.replace("/");
   };
-  const logout = () => {
-    setIsLoggedIn(false);
+  const logout = async () => {
+    await setAsyncStorageState({ isLoggedIn: false });
     /**
      * (Tips)
      * ここも元の画面に戻させないようにreplaceする
      */
     router.replace("/login");
   };
-  return { isLoggedIn, login, logout };
+
+  return { isLoggedIn: asyncStorageState?.isLoggedIn, login, logout, isReady };
 };
 
 export function useAuthState() {
@@ -38,11 +42,12 @@ export function useAuthAction() {
 }
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const { isLoggedIn, login, logout } = useAuthProvider();
+  const { isLoggedIn, login, logout, isReady } = useAuthProvider();
   return (
     <AuthContextState.Provider
       value={{
-        isLoggedIn: isLoggedIn,
+        isLoggedIn: isLoggedIn ?? false,
+        isReady: isReady,
       }}
     >
       <AuthContextAction.Provider

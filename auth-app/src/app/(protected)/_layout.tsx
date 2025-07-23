@@ -7,7 +7,10 @@ export const unstable_settings = {
 };
 
 export default function ProtectedLayout() {
-  const { isLoggedIn } = useAuthState();
+  const { isLoggedIn, isReady } = useAuthState();
+  if (!isReady) {
+    return null;
+  }
   if (!isLoggedIn) {
     return <Redirect href="/login" />;
   }
