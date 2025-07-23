@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import { AppText } from "@/components/AppText";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { Button } from "@/components/Button";
 
 /**
@@ -30,12 +30,37 @@ import { Button } from "@/components/Button";
  * index
  */
 export default function IndexScreen() {
+  const router = useRouter();
   return (
     <View className="justify-center flex-1 p-4">
       <AppText center>INDEX SCREEN</AppText>
       <Link href={"/second"} push asChild>
         <Button title="push to second" />
       </Link>
+
+      <Link
+        href={{
+          pathname: "/second",
+          params: {
+            name: "John Doe",
+          },
+        }}
+        push
+        asChild
+      >
+        <Button title="push to second with params" />
+      </Link>
+      <Button
+        onPress={() => {
+          router.push({
+            pathname: "/second",
+            params: {
+              name: "John Doe Router",
+            },
+          });
+        }}
+        title="push to second with router.push"
+      />
       <Link href={"/third"} push asChild>
         <Button title="push to third" />
       </Link>
