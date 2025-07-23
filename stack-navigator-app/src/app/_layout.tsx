@@ -7,7 +7,9 @@ export default function RootLayout() {
   return (
     <React.Fragment>
       <StatusBar style="auto" />
-      <Stack />
+      <Stack>
+        <Stack.Screen name="proverbs/[id]" options={{ title: "Proverbs" }} />
+      </Stack>
     </React.Fragment>
   );
 }
