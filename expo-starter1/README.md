@@ -2,7 +2,7 @@
 
 #### create project
 ```zsh
-npx expo init expo-starter1 --template expo-router
+npx create-expo-app expo-starter1 --template https://github.com/kadikraman/expo-starter
 ```
 #### install
 ```zsh
