@@ -15,6 +15,13 @@ export default function RootLayout() {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name="modal-with-stack"
+          options={{
+            presentation: "modal",
+            headerShown: false,
+          }}
+        />
       </Stack>
     </React.Fragment>
   );

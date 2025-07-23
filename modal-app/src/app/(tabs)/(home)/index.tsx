@@ -63,6 +63,9 @@ export default function IndexScreen() {
       <Link href={"/modal"} push asChild>
         <Button title="push to /modal" />
       </Link>
+      <Link href={"/modal-with-stack"} push asChild>
+        <Button title="push to /modal-with-stack" />
+      </Link>
       <Modal
         visible={isOpen}
         animationType="slide" // slide animation
