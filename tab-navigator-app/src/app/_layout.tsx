@@ -29,6 +29,7 @@ export default function RootLayout() {
           options={{
             headerShown: false,
             title: "Second",
+            popToTopOnBlur: true,
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons
                 name="numeric-2-box-outline"
