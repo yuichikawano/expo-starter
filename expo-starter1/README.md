@@ -1,6 +1,9 @@
 # Expo Router Layoutの概要
 
-
+#### create project
+```zsh
+npx expo init expo-starter1 --template expo-router
+```
 #### install
 ```zsh
 npm i
