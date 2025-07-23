@@ -22,3 +22,6 @@ npm run start
 ```zsh
 npm expo start --reset-cache
 ```
+### 認証永続化ライブラリ
+- zustand
+- expo-secure-store
