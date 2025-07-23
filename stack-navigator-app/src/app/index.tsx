@@ -78,6 +78,9 @@ export default function IndexScreen() {
       >
         <Button title="push to proverb 2" />
       </Link>
+      <Link href={"/products/shoes/123"} asChild push>
+        <Button title="push to product" />
+      </Link>
     </View>
   );
 }
