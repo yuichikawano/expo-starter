@@ -14,6 +14,10 @@ export default function ThirdScreen() {
       <Link href={"/"} dismissTo asChild>
         <Button title="Dismiss to index" />
       </Link>
+
+      <Link href={"/second"} replace asChild>
+        <Button title="replace to second" />
+      </Link>
     </View>
   );
 }
