@@ -52,7 +52,12 @@ export default function RootLayout() {
         <Tabs.Screen
           name="fourth"
           options={{
-            href: null,
+            // href: null,
+            tabBarBadge: 2,
+            tabBarBadgeStyle: {
+              backgroundColor: "black",
+              color: "white",
+            },
             title: "Fourth",
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons
