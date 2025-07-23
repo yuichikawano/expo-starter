@@ -1,12 +1,13 @@
 import { Redirect, Stack } from "expo-router";
 import React from "react";
+import { useAuthState } from "@/utils/authContext";
 
 export const unstable_settings = {
   initialRouteName: "(tabs)",
 };
-const isLoggedIn = false;
 
 export default function ProtectedLayout() {
+  const { isLoggedIn } = useAuthState();
   if (!isLoggedIn) {
     return <Redirect href="/login" />;
   }
