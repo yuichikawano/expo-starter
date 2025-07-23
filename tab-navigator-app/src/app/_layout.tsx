@@ -10,8 +10,9 @@ export default function RootLayout() {
       <StatusBar style="auto" />
       <Tabs screenOptions={{ tabBarActiveTintColor: "teal" }}>
         <Tabs.Screen
-          name="index"
+          name="(home)"
           options={{
+            headerShown: false,
             title: "Home",
             tabBarLabel: "Home",
             tabBarIcon: ({ color, size }) => (
