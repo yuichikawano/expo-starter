@@ -47,15 +47,15 @@ export default function IndexScreen() {
         />
       ) : null}
       <Button
-        title="Open Alert"
+        title="Open アラート Modal"
         theme="secondary"
         onPress={() => {
           handleOpenAlert();
         }}
       />
-      <Button title="Open Transparent Modal" theme="secondary" onPress={open} />
+      <Button title="Open 背景透過 Modal" theme="secondary" onPress={open} />
       <Button
-        title="Open PageSheet Modal"
+        title="Open ページシート Modal"
         theme="secondary"
         onPress={pageSheetModalOpen}
       />
