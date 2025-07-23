@@ -2,10 +2,10 @@ import { Stack } from "expo-router";
 import "../../global.css";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
+import { useAuthStore } from "@/utils/authStore";
 
-const isLoggedIn = false;
-const shouldCreateAccount = false;
 export default function RootLayout() {
+  const { isLoggedIn, shouldCreateAccount } = useAuthStore();
   return (
     <React.Fragment>
       <StatusBar style="auto" />
