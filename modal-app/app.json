@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "tab-navigator-app",
-    "slug": "tab-navigator-app",
+    "name": "modal-app",
+    "slug": "modal-app",
     "scheme": "expo-starter",
     "version": "1.0.0",
     "orientation": "portrait",
