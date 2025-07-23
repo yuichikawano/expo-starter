@@ -12,6 +12,7 @@ export default function RootLayout() {
           name="proverbs/[id]"
           options={({ route }) => ({
             title: "Proverb ID:" + route.params?.id,
+            animation: "slide_from_bottom",
           })}
         />
       </Stack>
