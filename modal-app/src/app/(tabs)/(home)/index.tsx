@@ -59,6 +59,10 @@ export default function IndexScreen() {
         theme="secondary"
         onPress={pageSheetModalOpen}
       />
+
+      <Link href={"/modal"} push asChild>
+        <Button title="push to /modal" />
+      </Link>
       <Modal
         visible={isOpen}
         animationType="slide" // slide animation

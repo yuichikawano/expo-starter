@@ -18,3 +18,7 @@ npm run start
 ```zsh
  npx expo-router-sitemap
 ```
+#### chace clear start
+```zsh
+npm expo start --reset-cache
+```

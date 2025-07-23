@@ -1,80 +1,21 @@
-import { Tabs } from "expo-router";
-import "../../global.css";
-import React from "react";
+import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import React from "react";
 
 export default function RootLayout() {
   return (
     <React.Fragment>
       <StatusBar style="auto" />
-      <Tabs
-        screenOptions={{ tabBarActiveTintColor: "teal" }}
-        backBehavior="order"
-      >
-        <Tabs.Screen
-          name="(home)"
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="modal"
           options={{
+            presentation: "modal",
             headerShown: false,
-            title: "Home",
-            tabBarLabel: "Home",
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons
-                name="numeric-1-box-outline"
-                size={size}
-                color={color}
-              />
-            ),
           }}
         />
-        <Tabs.Screen
-          name="second"
-          options={{
-            headerShown: false,
-            title: "Second",
-            popToTopOnBlur: true,
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons
-                name="numeric-2-box-outline"
-                size={size}
-                color={color}
-              />
-            ),
-          }}
-        />
-        <Tabs.Screen
-          name="third"
-          options={{
-            title: "Third",
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons
-                name="numeric-3-box-outline"
-                size={size}
-                color={color}
-              />
-            ),
-          }}
-        />
-        <Tabs.Screen
-          name="fourth"
-          options={{
-            // href: null,
-            tabBarBadge: 2,
-            tabBarBadgeStyle: {
-              backgroundColor: "black",
-              color: "white",
-            },
-            title: "Fourth",
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons
-                name="numeric-4-box-outline"
-                size={size}
-                color={color}
-              />
-            ),
-          }}
-        />
-      </Tabs>
+      </Stack>
     </React.Fragment>
   );
 }
