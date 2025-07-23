@@ -1,5 +1,6 @@
 import { View } from "react-native";
 import { AppText } from "@/components/AppText";
+import { Link } from "expo-router";
 
 export default function IndexScreen() {
   return (
@@ -7,6 +8,7 @@ export default function IndexScreen() {
       <AppText center>
         Open up <AppText bold>app/index.tsx</AppText> to start working on your
         app!
+        <Link href={"/"}>index</Link>
       </AppText>
     </View>
   );
