@@ -64,6 +64,20 @@ export default function IndexScreen() {
       <Link href={"/third"} push asChild>
         <Button title="push to third" />
       </Link>
+      <Link href={"/proverbs/1"} push asChild>
+        <Button title="push to proverb 1" />
+      </Link>
+
+      <Link
+        href={{
+          pathname: "/proverbs/[id]",
+          params: { id: "2" },
+        }}
+        push
+        asChild
+      >
+        <Button title="push to proverb 2" />
+      </Link>
     </View>
   );
 }
