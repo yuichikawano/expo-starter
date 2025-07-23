@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { Pressable, View } from "react-native";
 import { AppText } from "@/components/AppText";
 import { Link, useRouter } from "expo-router";
 import { Button } from "@/components/Button";
@@ -23,7 +23,21 @@ export default function IndexScreen() {
         <Button title="push to second Link asChild button" />
       </Link>
 
-      <Link href={"/third"} push>
+      <Link href={"/second"} asChild push>
+        <AppText center size="heading" bold className="bg-amber-100">
+          LinkでラップしたAppText コンポーネント(Push to Second)
+        </AppText>
+      </Link>
+
+      <Link href={"/second"} asChild push>
+        <Pressable>
+          <AppText center size="heading" bold className="bg-amber-100">
+            Link+PressableでラップしたAppText コンポーネント(Push to Second)
+          </AppText>
+        </Pressable>
+      </Link>
+
+      <Link href={"/third"} push className="bg-amber-100">
         push to third
       </Link>
     </View>
