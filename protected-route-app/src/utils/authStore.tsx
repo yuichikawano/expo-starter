@@ -7,6 +7,11 @@ type UserState = {
   shouldCreateAccount: boolean;
   login: () => void;
   logout: () => void;
+  hasCompletedOnboarding: boolean;
+  completeOnboarding: () => void;
+  resetOnboarding: () => void;
+  isVip: boolean;
+  loginAsVip: () => void;
 };
 
 export const useAuthStore = create(
@@ -14,8 +19,19 @@ export const useAuthStore = create(
     (set) => ({
       isLoggedIn: false,
       shouldCreateAccount: false,
+      hasCompletedOnboarding: false,
+      isVip: false,
+      loginAsVip: () =>
+        set((state) => ({ ...state, isVip: true, isLoggedIn: true })),
+      completeOnboarding: () => {
+        console.log("complete onboarding");
+        set((state) => ({ ...state, hasCompletedOnboarding: true }));
+      },
+      resetOnboarding: () =>
+        set((state) => ({ ...state, hasCompletedOnboarding: false })),
       login: () => set((state) => ({ ...state, isLoggedIn: true })),
-      logout: () => set((state) => ({ ...state, isLoggedIn: false })),
+      logout: () =>
+        set((state) => ({ ...state, isLoggedIn: false, isVip: false })),
     }),
     {
       name: "auth-store",
